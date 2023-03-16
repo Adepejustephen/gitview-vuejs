@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+    font-family: "Hind";
+    src: url("/public/fonts/Hind-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family:"Hind";
+    src: url("/public/fonts/Hind-SemiBold.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Hind";
+    src: url("/public/fonts/Hind-Light.ttf") format("truetype");
+
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+  }
+
+  /* @font-face {
+    font-family: "omnes";
+    src: url("/fonts/OmnesLight.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 200;
+    font-display: swap;
+  } */
+
+  @font-face {
+    font-family: "Hind";
+    src: url("/public/fonts/Hind-Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Hind";
+    src: url("/public//fonts/Hind-Medium.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+  }
+  html,
+  body {
+    @apply font-hind scroll-smooth;
+  }
+  
+    body{
+        background: #333;
+        color: #fff;
+    }
+}
+
+
+/* blue : #4CCFF9 
+orange: #FFBE00
+*/
