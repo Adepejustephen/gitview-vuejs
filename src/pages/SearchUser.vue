@@ -42,7 +42,7 @@
             <p class="font-normal text-xs md:text-sm">
               <span class="font-semibold text-sm md:text-lg">Repositories<span class="text-orangem">: </span> </span> {{currentUser.public_repos}}
             </p> -->
-            <button class="w-full p-3 text-bold outline-o border-2 border-bluem rounded-md" @click="$router.push(`users/${user.login}`)">View Profile</button>
+            <button class="w-full p-3 text-bold outline-0 border-2 border-bluem rounded-md hover:border-orangem transition" @click="$router.push(`users/${user.login}`)">View Profile</button>
           </div>
         </div>
        <div v-else class="flex flex-col gap-10 justify-between h-full w-full items-center">

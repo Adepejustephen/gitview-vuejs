@@ -7,7 +7,7 @@
      <div v-for="repo in currentRepos" class="flex flex-col gap-5 bg-[#4ccff9] bg-opacity-20 p-5 rounded-lg border-[#FEFEFE] border backdrop-blur-xl" :key='repo.id'>
       <h2 class="text-lg md:text-2xl lg:text-3xl font-semibold text-[#fefefe] ">{{repo.name}}</h2>
       <p v-if="repo.language" :class="[background[repo.language], 'font-medium text-base md:text-lg w-[max-content] p-3 rounded-md ']">{{repo.language}}</p>
-      <button class="border-orangem border round-md p-3 justify-self-end text-base md:text-lg font-medium" @click="$router.push(`/my-profile/repositories/${repo.id}`)">View repo</button>
+      <button class="border-orangem border round-md p-3 justify-self-end text-base md:text-lg font-medium hover:border-bluem transition" @click="$router.push(`/my-profile/repositories/${repo.id}`)">View repo</button>
     </div>
    </div>
 

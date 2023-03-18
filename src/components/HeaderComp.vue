@@ -22,7 +22,7 @@
         </nav>
         <nav
           v-if="openNav"
-          class="flex flex-col items-center gap-5 lg:hidden fixed h-screen inset-0 bg-slate-400 z-50 w-full"
+          class="flex flex-col items-center gap-5 lg:hidden fixed h-screen inset-0 bg-slate-700 z-50 w-full transition"
         >
           <ul class="flex flex-col gap-5 items-center justify-center h-full">
             <li v-for="nav in navLinks" :key="nav.title">
@@ -33,7 +33,23 @@
                 >{{ nav.title }}</router-link
               >
             </li>
+             <div class="gap-3 flex flex-col mt-5">
+          <input
+            type="text"
+            class="bg-white p-3 outline-0 rounded-md text-black"
+            placeholder="Find github user"
+            v-model="q"
+          />
+          <button
+            class="bg-[transparent] p-3 outline-o rounded-md border-orangem border hover:border-bluem transition"
+            @click="toSearch"
+          >
+            Search 
+          </button>
+        </div>
           </ul>
+         
+       
         </nav>
         <div class="gap-3 hidden lg:flex">
           <input
@@ -43,17 +59,18 @@
             v-model="q"
           />
           <button
-            class="bg-[transparent] p-3 outline-o rounded-md border-orangem border"
+            class="bg-[transparent] p-3 outline-o rounded-md border-orangem border hover:border-bluem hover:border-bluem transition"
             @click="toSearch"
           >
             Search 
           </button>
         </div>
         <button
-          class="flex flex-col bg-0 border-2 rounded-md border-orangem lg:hidden z-50"
+          class="flex flex-col bg-0 border-2 rounded-md border-orangem lg:hidden z-50 transition p-1"
           @click="openNav = !openNav"
         >
-          tottgle
+         <svg v-if='openNav' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        <svg v-else xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-align-justify"><line x1="21" y1="10" x2="3" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="21" y1="18" x2="3" y2="18"></line></svg>
         </button>
       </div>
     </div>
@@ -80,13 +97,16 @@ export default {
       if (this.$route.path.includes("find-user")) {
       this.$router.replace({
         path: "/find-user",
-        query:   {q: this.q } 
+        query: { q: this.q } 
+        
     })
       }
       this.$router.push({
         path: "/find-user",
-        query:   {q: this.q } 
-    })
+        query: { q: this.q } 
+        
+      })
+     this.openNav = false;
   }
 },
 
