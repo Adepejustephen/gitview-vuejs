@@ -4,11 +4,11 @@
   >
     <spinner-comp :loading="loading" />
     <div v-if="!loading" class="w-full flex flex-col gap-10 h-full">
-      <div class="flex justify-between">
+      <div class="flex-col md:flex-row flex md:justify-between gap-5">
         <h1
           class="border-b-2 border-blue-400 mb-20 p-b-1 w-[max-content] text-xl md:text-3xl lg:text-4xl font-bold"
         >
-          Search results - {{ username ||search }}
+          Search results - {{ username  }}
         </h1>
         <p class="font-medium text:lg md:text-xl">
           {{ totalResults }} results found
@@ -132,7 +132,11 @@ export default {
     },
     async handleSearch() {
       if (this.search) {
-        this.$router.query = this.search
+       this.$router.replace({
+        path: "/find-user",
+        query: { q: this.search } 
+        
+    })
         this.loading = true;
         const response = await fetch(
           `https://api.github.com/search/users?q=${this.search}&page=${this.page}`
