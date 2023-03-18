@@ -1,12 +1,13 @@
 <template>
-<section class="flex flex-col justify-center items-center min-h-screen gap-4 mt-10 py-5 px-10 md:px-14  xl:px-0 max-w-[1200px] m-auto w-full h-full">
+<section class="flex flex-col  items-center min-h-screen gap-4 mt-10 py-5 px-10 md:px-14  xl:px-0 max-w-[1200px] m-auto w-full h-full ">
+  <h1 class="border-b-2 border-blue-400 mb-20 p-b-1 w-[max-content] text-xl md:text-3xl lg:text-4xl font-bold self-center">My Repositiories</h1>
    <spinner-comp :loading="loading"/>
-   <div v-if="!loading" class="flex flex-col  gap-10">
+   <div v-if="!loading" class="flex flex-col  gap-10 items-center justify-center h-full w-full">
    <div class="flex flex-col md:grid md:grid-cols-2   gap-10 w-full ">
      <div v-for="repo in currentRepos" class="flex flex-col gap-5 bg-[#4ccff9] bg-opacity-20 p-5 rounded-lg border-[#FEFEFE] border backdrop-blur-xl" :key='repo.id'>
-      <h2 class="text-lg md:text-2xl lg:text-3xl font-semibold text-[#fefefe]">{{repo.name}}</h2>
+      <h2 class="text-lg md:text-2xl lg:text-3xl font-semibold text-[#fefefe] ">{{repo.name}}</h2>
       <p v-if="repo.language" :class="[background[repo.language], 'font-medium text-base md:text-lg w-[max-content] p-3 rounded-md ']">{{repo.language}}</p>
-      <button class="border-orangem border round-md p-3 justify-self-end" @click="$router.push(`/repositories/${repo.id}`)">View repo</button>
+      <button class="border-orangem border round-md p-3 justify-self-end text-base md:text-lg font-medium" @click="$router.push(`/repositories/${repo.id}`)">View repo</button>
     </div>
    </div>
 
