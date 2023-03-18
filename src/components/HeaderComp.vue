@@ -40,11 +40,13 @@
             type="text"
             class="bg-white p-3 outline-0 rounded-md text-black"
             placeholder="Find github user"
+            v-model="q"
           />
           <button
             class="bg-[transparent] p-3 outline-o rounded-md border-orangem border"
+            @click="toSearch"
           >
-            Search user
+            Search 
           </button>
         </div>
         <button
@@ -66,11 +68,27 @@ export default {
       navLinks: [
         { title: "Home", link: "/" },
         { title: "My-profile", link: "/my-profile" },
-        { title: "Search-users", link: "/find-user" },
+        { title: "Find-user", link: "/find-user" },
       ],
       openNav: false,
+      q: '',
     };
+
   },
+  methods: {
+    toSearch() {
+      if (this.$route.path.includes("find-user")) {
+      this.$router.replace({
+        path: "/find-user",
+        query:   {q: this.q } 
+    })
+      }
+      this.$router.push({
+        path: "/find-user",
+        query:   {q: this.q } 
+    })
+  }
+},
 
   unmounted() {
     this.openNav = false;

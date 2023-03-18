@@ -11,12 +11,12 @@ export const routes = [
   },
   {
     name: "Repositories",
-    path: "/repositories",
+    path: "/my-profile/repositories",
     component: () => import("@/pages/Repositories.vue"),
   },
   {
     name: "Single repo",
-    path: "/repositories/:id",
+    path: "/my-profile/repositories/:ID",
     component: () => import("@/pages/SingleRepo.vue"),
   },
   {
