@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center my-10">
+  <div class="flex justify-center py-5 mt-10 bg-[#1E293B]">
    <p class="font-bold text-base md:text-lg ">
     Ifeoluwa Adepeju &copy; {{ year }}
    </p>

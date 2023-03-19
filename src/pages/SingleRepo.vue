@@ -3,6 +3,7 @@
    <spinner-comp :loading="loading"/>
   <div v-if="!loading" class="w-full flex flex-col">
      <h1 class="border-b-2 border-blue-400 mb-20 p-b-1 w-[max-content] text-xl md:text-3xl lg:text-4xl font-bold self-center">{{repo.name}}</h1>
+     <h1 class="border-b-2 border-blue-400 mb-20 p-b-1 w-[max-content] text-xl md:text-3xl lg:text-4xl font-bold self-center">{{createdAt }}</h1>
   </div>
  </section>
 </template>
@@ -26,7 +27,14 @@ export default {
   computed: {
     id(){
       return parseInt(this.$route.params.ID)
+    },
+    createdAt() {
+      if (this.repo) {
+        return this.repo.created_at.toLocaleString()
+      }
+      return this.repo
     }
+
   },
   methods: {
  async fetchRepos() {

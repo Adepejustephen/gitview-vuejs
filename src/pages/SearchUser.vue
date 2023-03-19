@@ -25,7 +25,7 @@
           <div
             v-for="user in users"
             :key="user.id"
-            class="flex flex-col gap-5 bg-[#1E293B] rounded-lg p-4 shadow-md"
+            class="flex flex-col gap-5 bg-[#1E293B] rounded-lg p-4 shadow-md border border-white"
           >
           
             <div class="flex flex-col gap-3 items-center">
