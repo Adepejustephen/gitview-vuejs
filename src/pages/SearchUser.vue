@@ -1,10 +1,10 @@
 <template>
   <div
-    class="flex flex-col items-center min-h-screen gap-4 mt-10 py-5 px-10 md:px-14 xl:px-0 max-w-[1200px] m-auto w-full h-full"
+    class="flex flex-col items-center justify-center min-h-screen gap-4 mt-10 py-5 px-10 md:px-14 xl:px-0 max-w-[1200px] m-auto w-full h-full"
   >
     <spinner-comp :loading="loading" />
-    <div v-if="!loading" class="w-full flex flex-col gap-10 h-full">
-      <div class="flex-col md:flex-row flex md:justify-between gap-5">
+    <div v-if="!loading " class="w-full flex flex-col gap-10 h-full">
+      <div class="flex-col md:flex-row flex md:justify-between gap-5" v-if="users.length >= 1">
         <h1
           class="border-b-2 border-blue-400 mb-20 p-b-1 w-[max-content] text-xl md:text-3xl lg:text-4xl font-bold"
         >
@@ -45,10 +45,14 @@
             <button class="w-full p-3 text-bold outline-0 border-2 border-bluem rounded-md hover:border-orangem transition" @click="$router.push(`users/${user.login}`)">View Profile</button>
           </div>
         </div>
-       <div v-else class="flex flex-col gap-10 justify-between h-full w-full items-center">
-         <h2  class="text-2xl md:text-4xl lg:text-5xl font-bold">
+       <div  class="flex flex-col gap-10 justify-between h-full w-full items-center">
+         <h2   v-if="users.length < 1" class="text-2xl md:text-4xl lg:text-5xl font-bold">
+         Search user
+        </h2>
+         <h2   v-else class="text-2xl md:text-4xl lg:text-5xl font-bold">
           No result found
         </h2>
+        
          <form class="gap-3 flex w-full max-w-[600px]"  @submit="handleSearch">
           <input
             type="text"

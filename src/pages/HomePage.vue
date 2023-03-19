@@ -6,8 +6,8 @@
     <h1 class="font-bold text-bluem text-4xl md:text-5xl lg:text-7xl">GitView</h1>
    </div>
    <div class="flex flex-col md:flex-row gap-5 mt-10">
-    <button class="py-4 px-20 bg-orangem border-0 text-base md:text-lg font-bold rounded-lg outline-0 hover:border h-16 hover:border-orangem hover:bg-transparent transition " @click="  navigateProfile">My profile</button>
-    <button class="py-4 px-20 border-orangem border text-base md:text-lg font-bold rounded-lg outline-0 h-16 hover:border-0 hover:bg-yellow-400 tansition" @click=" navigateSearch">Find user</button>
+    <button class="py-4 px-20 bg-orangem border-0 text-base md:text-lg font-bold rounded-lg outline-0 hover:border h-16 hover:border-white hover:bg-transparent transition " @click="  navigateProfile">My profile</button>
+    <button class="py-4 px-20 border-orangem border text-base md:text-lg font-bold rounded-lg outline-0 h-16  hover:border-bluem tansition" @click=" navigateSearch">Find user</button>
    </div>
   </div>
 </template>
